@@ -1,7 +1,7 @@
 {% set name = "immutables" %}
-{% set version = "0.8" %}
+{% set version = "0.9" %}
 {% set hash_type = "sha256" %}
-{% set hash_value = "8e45d1035d676155a7d104441ffd992f45fb3253db4961302371cef86e652308" %}
+{% set hash_value = "d71d1c822498646143270580dd6f743bb31ab89ae0ded8b2307c356d3a00f1c0" %}
 
 package:
   name: '{{ name|lower }}'
