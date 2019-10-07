@@ -1,7 +1,7 @@
 {% set name = "immutables" %}
-{% set version = "0.9" %}
+{% set version = "0.10" %}
 {% set hash_type = "sha256" %}
-{% set hash_value = "d71d1c822498646143270580dd6f743bb31ab89ae0ded8b2307c356d3a00f1c0" %}
+{% set hash_value = "e661bebe9428942ebdb569b718d8c7895ec939858d307655844e2a7994ad2a9e" %}
 
 package:
   name: '{{ name|lower }}'
@@ -14,7 +14,7 @@ source:
 
 build:
   skip: True  # [py27]
-  number: 1000
+  number: 0
   script: python -m pip install . --no-deps --ignore-installed
 
 requirements:
