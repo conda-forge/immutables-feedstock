@@ -11,6 +11,9 @@ source:
   fn: '{{ name }}-{{ version }}.tar.gz'
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   '{{ hash_type }}': '{{ hash_value }}'
+  patches:
+    # https://github.com/MagicStack/immutables/pull/16
+    - 001-py38-test-fix.patch
 
 build:
   skip: True  # [py27]
