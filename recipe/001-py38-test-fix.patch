@@ -1,39 +1,3 @@
-diff --git a/.travis.yml b/.travis.yml
-index 4c05bd6..7b81f29 100644
---- a/.travis.yml
-+++ b/.travis.yml
-@@ -3,7 +3,7 @@ language: generic
- env:
-     global:
-         - PYMODULE=immutables
--        - RELEASE_PYTHON_VERSIONS="3.5 3.6 3.7"
-+        - RELEASE_PYTHON_VERSIONS="3.5 3.6 3.7 3.8"
- 
-         - S3_UPLOAD_USERNAME=oss-ci-bot
-         - S3_UPLOAD_BUCKET=magicstack-oss-releases
-@@ -36,6 +36,12 @@ matrix:
-           python: "3.7"
-           env: BUILD=tests
- 
-+        - os: linux
-+          dist: xenial
-+          language: python
-+          python: "3.8"
-+          env: BUILD=tests
-+
-         - os: linux
-           dist: trusty
-           sudo: required
-@@ -53,6 +59,9 @@ matrix:
-         - os: osx
-           env: BUILD=tests,wheels PYTHON_VERSION=3.7.0
- 
-+        - os: osx
-+          env: BUILD=tests,wheels PYTHON_VERSION=3.8.0
-+
- cache:
-     pip
- 
 diff --git a/setup.py b/setup.py
 index 435397d..e27586c 100644
 --- a/setup.py
@@ -53,9 +17,9 @@ index 8d629f8..0b464cf 100644
 @@ -1294,7 +1294,7 @@ class BaseMapTest:
              self.assertTrue(isinstance(uh, self.Map))
              self.assertEqual(h, uh)
- 
+
 -        with self.assertRaisesRegex(TypeError, "can't pickle"):
 +        with self.assertRaisesRegex(TypeError, "can('t|not) pickle"):
              pickle.dumps(h.mutate())
- 
+
      @unittest.skipIf(sys.version_info < (3, 7, 0), "__class_getitem__ is not available")
