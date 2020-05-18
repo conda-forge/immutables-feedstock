@@ -1,5 +1,5 @@
 {% set name = "immutables" %}
-{% set version = "0.13" %}
+{% set version = "0.14" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e897851cd4307d51324d4c445c42b51f7bdb6a478a3555df7a9ff4ca60728da9
+  sha256: a0a1cc238b678455145bae291d8426f732f5255537ed6a5b7645949704c70a78
 
 build:
   skip: true  # [py27]
