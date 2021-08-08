@@ -11,7 +11,7 @@ source:
   sha256: d67e86859598eed0d926562da33325dac7767b7b1eff84e232c22abea19f4360
 
 build:
-  skip: true  # [py27]
+  skip: true  # [py<36]
   number: 0
   script: python -m pip install . --no-deps --ignore-installed
 
@@ -26,10 +26,14 @@ requirements:
     - setuptools
   run:
     - python
+    - typing-extensions >=3.7.4  # [py<38]
 
 test:
   requires:
-    - pytest
+    - flake8 =3.8.4
+    - pycodestyle >=2.6.*
+    - mypy >=0.910
+    - pytest >=6.2.4
   source_files:
     - tests
   imports:
