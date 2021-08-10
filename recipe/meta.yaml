@@ -29,19 +29,19 @@ requirements:
     - typing-extensions >=3.7.4  # [py<38]
 
 test:
-  requires:
-    - flake8 =3.8.4
-    - pycodestyle >=2.6.*
-    - mypy >=0.910
-    - pytest >=6.2.4
-  source_files:
-    - tests
-  imports:
-    - immutables
   # Since immutables introduced mypy testing, the mypy plugin fails with this error:
   #   FileNotFoundError: [Errno 2] No such file or directory: '$SRC_DIR/tests/test-data/check-immu.test'
   # Which is strange given the tests directory is being copied.
-  # Dropping tests for now until someone takes the time to look into it.
+  # Dropping running tests for now until someone takes the time to look into it.
+  # requires:
+  #   - flake8 =3.8.4
+  #   - pycodestyle >=2.6.*
+  #   - mypy >=0.910
+  #   - pytest >=6.2.4
+  # source_files:
+  #   - tests
+  imports:
+    - immutables  
   # commands:
   #  - pytest tests
 
