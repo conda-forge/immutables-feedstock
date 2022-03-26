@@ -1,5 +1,5 @@
 {% set name = "immutables" %}
-{% set version = "0.16" %}
+{% set version = "0.17" %}
 
 package:
   name: {{ name|lower }}
@@ -8,11 +8,11 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d67e86859598eed0d926562da33325dac7767b7b1eff84e232c22abea19f4360
+  sha256: ad894446355b6f5289a9c84fb46f7c47c6ef2b1bfbdd2be6cb177dbb7f1587ad
 
 build:
   skip: true  # [py<36]
-  number: 1
+  number: 0
   script: python -m pip install . --no-deps --ignore-installed
 
 requirements:
@@ -41,7 +41,7 @@ test:
   # source_files:
   #   - tests
   imports:
-    - immutables  
+    - immutables
   # commands:
   #  - pytest tests
 
