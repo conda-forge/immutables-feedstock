@@ -1,5 +1,5 @@
 {% set name = "immutables" %}
-{% set version = "0.19" %}
+{% set version = "0.20" %}
 
 package:
   name: {{ name|lower }}
@@ -8,11 +8,11 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: df17942d60e8080835fcc5245aa6928ef4c1ed567570ec019185798195048dcf
+  sha256: 1d2f83e6a6a8455466cd97b9a90e2b4f7864648616dfa6b19d18f49badac3876
 
 build:
   skip: true  # [py<36]
-  number: 1
+  number: 0
   script: python -m pip install . --no-deps --ignore-installed
 
 requirements:
