@@ -11,7 +11,7 @@ source:
   sha256: 1d2f83e6a6a8455466cd97b9a90e2b4f7864648616dfa6b19d18f49badac3876
 
 build:
-  skip: true  # [py<36]
+  skip: true  # [py<38]
   number: 0
   script: python -m pip install . --no-deps --ignore-installed
 
@@ -26,7 +26,6 @@ requirements:
     - setuptools
   run:
     - python
-    - typing-extensions >=3.7.4  # [py<38]
 
 test:
   # Since immutables introduced mypy testing, the mypy plugin fails with this error:
